@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timothy Chula Lwambi | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bgDark: "#000000",
+              bgCard: "#0f0f0f",
+              borderDark: "#222222",
+              textMuted: "#a3a3a3",
+              textBright: "#ffffff",
+              accent: "#2563eb",
+              accentLight: "#60a5fa",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-15px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #000000;
+        color: #a3a3a3;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #ffffff;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #222222;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2563eb;
+      }
+
+      /* Typing Effect Cursor */
+      .typing-cursor::after {
+        content: "|";
+        animation: blink 1s step-start infinite;
+        color: #3b82f6;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Project Card Hover Setup */
+      .project-card {
+        transition: all 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-7px);
+        border-color: #2563eb;
+        box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.2);
+      }
+      .project-card:hover .project-title {
+        color: #60a5fa;
+      }
+
+      /* Section Titles Line */
+      .section-heading::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 300px;
+        background-color: #222222;
+        margin-left: 20px;
+      }
+      @media (max-width: 768px) {
+        .section-heading::after {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-accent selection:text-white">
+    <nav
+      class="fixed w-full z-50 bg-bgDark/90 backdrop-blur-md border-b border-borderDark"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-accentLight font-bold text-2xl tracking-tighter"
+          >TL<span class="text-textBright">.</span></a
+        >
+        <div
+          class="hidden md:flex space-x-8 text-sm font-medium text-textMuted"
+        >
+          <a href="#about" class="hover:text-accentLight transition-colors"
+            ><span class="text-accent mr-1"></span>About</a
+          >
+          <a href="#experience" class="hover:text-accentLight transition-colors"
+            ><span class="text-accent mr-1"></span>Experience</a
+          >
+          <a href="#projects" class="hover:text-accentLight transition-colors"
+            ><span class="text-accent mr-1"></span>Projects</a
+          >
+          <a href="#contact" class="hover:text-accentLight transition-colors"
+            ><span class="text-accent mr-1"></span>Contact</a
+          >
+        </div>
+        <button class="md:hidden text-accentLight text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 sm:px-12 lg:px-24">
+      <section
+        id="home"
+        class="min-h-screen flex flex-col justify-center pt-20 pb-10"
+      >
+        <div
+          class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+        >
+          <div class="w-full md:w-3/5">
+            <p
+              class="text-accentLight font-medium tracking-wide mb-5 uppercase text-sm"
+            >
+              Hi, my name is
+            </p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Timothy Chula Lwambi</h1>
+<!-- Typing Effect Container -->
+<h2 class="text-2xl md:text-3xl text-blue-500 font-medium mb-8 h-10">
+    <span id="typing-text"></span><span class="text-white animate-pulse">|</span>
+</h2>
+            
+            <p
+              class="max-w-xl text-lg mb-10 leading-relaxed text-textMuted font-light"
+            >
+              I specialize in building exceptional digital experiences, managing
+              robust network infrastructures, and solving complex problems
+              through elegant code. Currently studying at Moi University.
+            </p>
+            <a
+              href="#projects"
+              class="inline-block border-2 border-accent text-accentLight px-8 py-3 rounded-md font-medium text-sm hover:bg-accent/10 hover:border-accentLight transition-all"
+            >
+              Check out my work
+            </a>
+          </div>
+
+          <div class="w-full md:w-2/5 flex justify-center md:justify-end">
+            <div class="relative group w-64 h-64 sm:w-72 sm:h-72 animate-float">
+
+              <img
+                src="Timothy.jpg"
+                alt="Timothy Chula Lwambi"
+                class="absolute inset-0 w-full h-full object-cover rounded-full mix-blend-screen filter grayscale group-hover:filter-none group-hover:mix-blend-normal transition-all duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-24 max-w-3xl mx-auto">
+        <h2
+          class="section-heading flex items-center text-2xl md:text-3xl font-bold mb-10 text-textBright"
+        >
+          <span class="text-accent text-xl md:text-2xl mr-3 font-medium"></span>
+          About Me
+        </h2>
+        <div
+          class="text-lg text-textMuted space-y-5 leading-relaxed font-light"
+        >
+          <p>
+            Hello! I'm Timothy, a passionate technology enthusiast with a deep
+            interest in how things work behind the scenes. My journey into tech
+            started with curiosity, leading me to pursue a Computer Science
+            degree at
+            <span class="text-accentLight font-medium">Moi University</span>.
+          </p>
+          <p>
+            I thrive in environments where software engineering meets network
+            infrastructure. Whether I'm developing web applications, navigating
+            a
+            <span class="text-accentLight font-medium">Linux/WSL</span>
+            environment, or analyzing network packets, I enjoy the challenge of
+            building secure, scalable solutions.
+          </p>
+          <p>
+            My goal is to bridge the gap between application development and
+            robust, secure networking to create holistic tech ecosystems.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left mt-12">
+    <!-- Education & Skills -->
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+        <h3 class="text-2xl font-bold text-blue-500 mb-4">Background</h3>
+        <p class="text-gray-300 mb-2"><strong>Education:</strong> BSc. Computer Science, Moi University</p>
+        <p class="text-gray-300 mb-4"><strong>Capstone Project: </strong> Currently developing an AI
+          powered phishing URL and SMS detection system.
+          </p>
+  
+    </div>
+      </section>
+
+      <section id="experience" class="py-24 max-w-4xl mx-auto">
+        <h2
+          class="section-heading flex items-center text-2xl md:text-3xl font-bold mb-10 text-textBright"
+        >
+          <span class="text-accent text-xl md:text-2xl mr-3 font-medium"></span>
+          Experience & Skills
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Experience -->
+          <div>
+            <h3 class="text-xl font-semibold text-textBright mb-6">
+              Work & Roles
+            </h3>
+
+            <div class="mb-8 relative pl-6 border-l-2 border-borderDark">
+              <div
+                class="absolute w-3 h-3 bg-accent rounded-full -left-[7px] top-2 shadow-[0_0_10px_rgba(37,99,235,0.8)]"
+              ></div>
+              <h4 class="text-lg font-semibold text-textBright">
+                ICT
+              </h4>
+              <p class="text-accentLight text-sm mb-2 font-medium">
+                Kenya Ports Authority
+              </p>
+              <p class="text-sm text-textMuted font-light">
+                Gained hands-on experience in managing large-scale network
+                infrastructure and providing essential IT support in a dynamic,
+                high-stakes environment.
+              </p>
+            </div>
+
+            <div class="relative pl-6 border-l-2 border-borderDark">
+              <div
+                class="absolute w-3 h-3 bg-bgDark rounded-full -left-[7px] top-2 border-2 border-accent"
+              ></div>
+              <h4 class="text-lg font-semibold text-textBright">
+                AI Data Annotation
+              </h4>
+              <p class="text-accentLight text-sm mb-2 font-medium">
+                CVAT, CloudFactory
+              </p>
+              <p class="text-sm text-textMuted font-light">
+                Contributed to machine learning models by accurately labeling
+                and structuring complex datasets, ensuring high-quality inputs
+                for AI systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div>
+            <h3 class="text-xl font-semibold text-textBright mb-6">
+              Technical Arsenal
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <!-- Skill Tags -->
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >Java</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >Python</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >C</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >JavaScript</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >HTML/CSS</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >SQL</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >Flask</span
+              >
+              <span
+                class="px-4 py-2 bg-bgCard text-textBright text-sm rounded border border-borderDark hover:-translate-y-1 hover:border-accent hover:text-accentLight transition-all cursor-default shadow-sm"
+                >Linux/Ubuntu</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+        <!-- Projects Section -->
+<section id="projects" class="py-20 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12 text-white"><span class="text-blue-500">My</span> Projects</h2>
+    
+    <!-- THIS is the exact ID the JavaScript is looking for -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- The JavaScript will automatically generate and insert the project cards right here -->
+    </div>
+</section>
+        
+
+      <section id="contact" class="py-32 text-center max-w-2xl mx-auto">
+        <p class="text-accentLight text-sm mb-4 font-medium tracking-wide">
+          What's Next?
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold text-textBright mb-6">
+          Get In Touch
+        </h2>
+        <p class="text-textMuted mb-10 font-light">
+          Whether you have a question, a project proposition, or just want to
+          say hi, my inbox is always open. I'll try my best to get back to you!
+        </p>
+        <a
+          href="mailto:your.email@example.com"
+          class="inline-block border-2 border-accent text-accentLight px-8 py-3 rounded-md font-medium text-sm hover:bg-accent/10 hover:border-accentLight transition-all mb-20"
+        >
+          Say Hello
+        </a>
+        <!-- Download CV Button -->
+<div class="mt-10 flex justify-center">
+    <a href="Timothy CV.pdf" download="Timothy_Chula_Lwambi_CV.pdf" class="inline-flex items-center gap-2 px-8 py-3 bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-full font-bold tracking-wide transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download CV
+    </a>
+</div>
+<form action="https://formspree.io/f/xbglvqby" method="POST" class="max-w-2xl mx-auto flex flex-col gap-6 mt-10">
+    
+    <!-- Formspree needs the 'name' attributes to know what data is being sent -->
+    <input type="text" name="name" placeholder="Your Name" required class="w-full bg-gray-900 border border-gray-800 rounded-lg p-4 text-white focus:outline-none focus:border-blue-500 transition-colors shadow-sm hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]">
+    
+    <input type="email" name="email" placeholder="Your Email" required class="w-full bg-gray-900 border border-gray-800 rounded-lg p-4 text-white focus:outline-none focus:border-blue-500 transition-colors shadow-sm hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]">
+    
+    <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-gray-900 border border-gray-800 rounded-lg p-4 text-white focus:outline-none focus:border-blue-500 transition-colors shadow-sm hover:shadow-[0_0_10px_rgba(59,130,246,0.1)]"></textarea>
+    
+    <button type="submit" class="bg-blue-600 text-white font-bold tracking-wide py-3 px-8 rounded-lg hover:bg-blue-500 hover:shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all duration-300 self-start">
+        Send Message
+    </button>
+</form>
+      </section>
+    </main>
+
+    <footer
+      class="py-6 text-center text-textMuted text-sm font-light border-t border-borderDark/50 mt-10"
+    >
+      <div class="flex justify-center space-x-6 mb-4">
+        <a
+          href="#"
+          class="text-textMuted hover:text-accentLight hover:-translate-y-1 transition-all text-xl"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="#"
+          class="text-textMuted hover:text-accentLight hover:-translate-y-1 transition-all text-xl"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="#"
+          class="text-textMuted hover:text-accentLight hover:-translate-y-1 transition-all text-xl"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+      <p>Built by Timothy Chula Lwambi</p>
+    </footer>
+<!-- Image Slider Modal -->
+<div id="image-modal" class="fixed inset-0 bg-black/95 z-50 hidden flex-col items-center justify-center backdrop-blur-sm">
+    <!-- Close Button -->
+    <button onclick="closeModal()" class="absolute top-6 right-8 text-white text-5xl hover:text-blue-500 transition cursor-pointer">&times;</button>
+    
+    <!-- Previous Button -->
+    <button onclick="changeImage(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-blue-500 p-4 transition cursor-pointer">&#10094;</button>
+    
+    <!-- The Image -->
+    <img id="modal-image" src="" alt="Project Screenshot" class="max-h-[85vh] max-w-[85vw] object-contain rounded-lg border border-gray-800 shadow-2xl">
+    
+    <!-- Next Button -->
+    <button onclick="changeImage(1)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-blue-500 p-4 transition cursor-pointer">&#10095;</button>
+    
+    <!-- Image Counter (e.g., 1 / 5) -->
+    <div id="image-counter" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-400 text-lg font-medium tracking-widest"></div>
+</div>
+<!-- Back to Top Floating Button -->
+<button id="backToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="fixed bottom-8 right-8 z-50 p-3 bg-gray-900 border border-gray-800 text-blue-500 rounded-full shadow-lg hover:bg-blue-600 hover:text-white hover:shadow-[0_0_15px_rgba(37,99,235,0.6)] transition-all duration-500 cursor-pointer group opacity-0 pointer-events-none translate-y-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:-translate-y-1 transition-transform duration-300">
+        <path d="M12 19V5"></path>
+        <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+</button>
+    <script>
+const projectsGrid = document.getElementById('projects-grid');
+
+// 1. Add your image filenames to the "images" array for each project
+const projectsData = [
+    {
+        title: "Airline Management System",
+        description: "A web application featuring seat availability tracking, customer administration, and automated ticket generation.",
+        tech: ["Python", "Flask", "SQLite", "HTML/CSS"],
+        github: "#",
+        live: "#",
+        images: ["airline-1.png", "airline-2.png", "airline-3.png"] // Put your actual filenames here
+    },
+    {
+        title: "Wi-Fi Attendance Tracker",
+        description: "A web-based attendance tracking system utilizing device MAC address authentication logic.",
+        tech: ["JavaScript", "HTML", "CSS", "SQL"],
+        github: "#",
+        live: "#",
+        images: ["wifi-1.jpg", "wifi-2.jpg"] // Put your actual filenames here
+    }
+];
+
+// Variables to track which project's images are currently open in the slider
+let currentImages = [];
+let currentIndex = 0;
+
+// 2. Generate the cards
+projectsData.forEach((project, index) => {
+    const techSpans = project.tech.map(t => `<span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm border border-blue-800/50">${t}</span>`).join('');
+    
+    // Grab the first image to use as the card cover, or show a placeholder if none exist
+    const coverImage = project.images && project.images.length > 0 ? project.images[0] : '';
+    
+    // Create the clickable image area
+    const imageContainer = coverImage 
+        ? `<img src="${coverImage}" alt="${project.title}" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-500" onclick="openModal(${index})">`
+        : `<span>[No Image]</span>`;
+
+    const card = `
+        <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300 flex flex-col group">
+            <div class="h-56 bg-gray-800 flex items-center justify-center text-gray-500 border-b border-gray-800 relative overflow-hidden">
+                ${imageContainer}
+                <!-- Hover overlay text -->
+                ${coverImage ? `<div class="absolute inset-0 bg-blue-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none transition duration-300"><span class="text-white font-bold tracking-wider bg-black/50 px-4 py-2 rounded-lg">View</span></div>` : ''}
+            </div>
+            <div class="p-6 flex-grow">
+                <h3 class="text-xl font-bold mb-2 text-white">${project.title}</h3>
+                <p class="text-gray-400 mb-4 text-sm leading-relaxed">${project.description}</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    ${techSpans}
+                </div>
+            </div>
+            <div class="p-6 pt-0 flex gap-4 mt-auto">
+                <a href="${project.github}" class="text-blue-500 hover:text-blue-400 font-medium text-sm transition-colors" target="_blank">GitHub Repo</a>
+            </div>
+        </div>
+    `;
+    
+    projectsGrid.innerHTML += card;
+});
+
+// 3. Modal Control Functions
+function openModal(projectIndex) {
+    currentImages = projectsData[projectIndex].images;
+    if (!currentImages || currentImages.length === 0) return; // Do nothing if no images
+    
+    currentIndex = 0;
+    updateModalImage();
+    
+    const modal = document.getElementById('image-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Stop the background website from scrolling
+}
+
+function closeModal() {
+    const modal = document.getElementById('image-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto'; // Turn background scrolling back on
+}
+
+function changeImage(direction) {
+    currentIndex += direction;
+    
+    // Loop back to the start if we go past the last image
+    if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+    // Loop to the end if we go backwards past the first image
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    }
+    
+    updateModalImage();
+}
+
+function updateModalImage() {
+    const modalImg = document.getElementById('modal-image');
+    const counter = document.getElementById('image-counter');
+    
+    modalImg.src = currentImages[currentIndex];
+    counter.innerText = `${currentIndex + 1} / ${currentImages.length}`;
+}
+
+// Close the modal if the user clicks anywhere on the dark background
+document.getElementById('image-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+// --- Typing Effect ---
+const titles = ["Software Developer.", "Web Developer.", "Cybersecurity Professional."];
+let titleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const currentTitle = titles[titleIndex];
+    const typingElement = document.getElementById('typing-text');
+    
+    if (isDeleting) {
+        // Remove a character
+        typingElement.innerText = currentTitle.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        // Add a character
+        typingElement.innerText = currentTitle.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    // Set speeds (typing is slower than deleting)
+    let timer = isDeleting ? 50 : 100;
+    
+    // If word is finished typing, pause before deleting
+    if (!isDeleting && charIndex === currentTitle.length) {
+        timer = 2000; // Pause for 2 seconds
+        isDeleting = true;
+    } 
+    // If word is completely deleted, move to the next word
+    else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        titleIndex = (titleIndex + 1) % titles.length;
+    }
+    
+    setTimeout(typeEffect, timer);
+}
+
+// Start the typing effect immediately
+typeEffect();
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+window.addEventListener('scroll', () => {
+    // If you scroll down more than 300 pixels, show the button
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+        backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    } else {
+        // Otherwise, hide it
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+        backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    }
+});
+</script>
+  </body>
+</html>
